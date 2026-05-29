@@ -112,11 +112,23 @@ Most important settings are near the top of `eww.yuck`.
 │   └── toggle_mute.sh
 └── widgets/
     ├── clock/
+    |   ├── clock.scss
+    |   └── clock.yuck
     ├── cpu/
+    |   ├── cpu.scss
+    |   └── cpu.yuck
     ├── disk/
+    |   ├── disk.scss
+    |   └── disk.yuck
     ├── mem/
+    |   ├── mem.scss
+    |   └── mdm.yuck
     ├── net/
+    |   ├── net.scss
+    |   └── net.yuck
     └── volume/
+        ├── volume.scss
+        └── volume.yuck
 ```
 
 ---
