@@ -1,0 +1,56 @@
+$clock-time-color: white;
+$clock-seconds-color: white;
+$clock-day-color: #FF3333;
+$clock-date-color: #00BBFF;
+$clock-uptime-color: yellow;
+$clock-sep-line: #00FF55;
+
+/* ===================================== */
+/* ========== Clock ==================== */
+
+.clock-widget {
+   background-color: $widget-background-color;
+   border: $widget-border;
+   border-radius: 8px;
+}
+
+.clock-time-text {
+   font-size: 46px;
+   color: $clock-time-color;
+}
+
+.seconds-bar {
+   min-width: 1px;
+}
+.seconds-bar progress {
+   background-color: $clock-seconds-color;
+   min-height: 1px;
+}
+.seconds-bar trough {
+   background-color: rgb(0, 0, 0, 0.9);
+   border: 0px;
+   min-height: 1px;
+
+}
+
+.clock-day-text {
+   font-size: 22px;
+   color: $clock-day-color;
+}
+.clock-date-text {
+   font-size: 22px;
+   color: $clock-date-color;
+}
+
+.separator-line {
+   background-color: $clock-sep-line;
+}
+
+.clock-uptime-text {
+   font-size: 16px;
+   color: $clock-uptime-color;
+   margin-bottom: 3px;
+}
+
+/* ===================================== */
+/* ===================================== */

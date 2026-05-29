@@ -1,0 +1,72 @@
+
+$disk-read-color: #00AAFF;
+$disk-usage-color: orange;
+$disk-write-color: #FF3333;
+
+/* ===================================== */
+/* ========== DISK ===================== */
+
+.disk-widget {
+   background-color: $widget-background-color;
+   border: $widget-border;
+   border-radius: 8px;
+}  
+
+.disk-title-text {
+   font-size: 14px;
+}  
+.disk-location-text {
+   font-size: 10px;
+}
+   
+/* ----- READ -------- */
+.disk-read-graph {
+   margin-top: 2px;
+   color: $disk-read-color;
+   background-color: $graph-background-color;
+   border: $graph-border;
+   graph {
+      background-color: $disk-read-color;
+   }
+}
+.disk-read-text {
+   color: $disk-read-color;
+   margin-bottom: -3px;
+   font-size: 12px;
+}
+/* ------------------- */
+
+/* ---- USAGE BAR ---- */
+.disk-usage-bar {
+   min-width: 1px;
+}
+.disk-usage-bar progress {
+   background-color: $disk-usage-color;
+}
+.disk-usage-bar trough {
+   margin-top: 1px;
+   background-color: $graph-background-color;
+   border: 1px solid;
+   border-color: $disk-usage-color;
+}
+/* ------------------- */
+
+/* ----- WRITE ------- */
+.disk-write-graph {
+   margin-top: 1px;
+   color: $disk-write-color;
+   background-color: $graph-background-color;
+   border: $graph-border;
+   graph {
+      background-color: $disk-write-color;
+   }
+}
+.disk-write-text {
+   color: $disk-write-color;
+   margin-top: -2px;
+   font-size: 12px;
+}
+/* ------------------- */
+
+/* ===================================== */
+/* ===================================== */

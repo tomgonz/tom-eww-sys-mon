@@ -1,0 +1,100 @@
+;; =============================================
+;; eww.yuck
+;; =============================================
+
+(defvar net_dev "enp9s0")
+(defvar timezone "America/New_York")
+(defvar cpu_bar_width 11)
+(defvar cpu_temp_sensor "K10TEMP_TCTL")
+(defvar filemgr "xdg-open")
+
+(defvar widget_width 220)
+(defvar margin_width 10)
+(defvar graph_width 200)
+(defvar graph_height 40)
+(defvar graph_height_cpu_mem 50)
+(defvar clock_bar_width 180)
+
+(defvar disk_read_cur_1 0)
+(defvar disk_read_max_1 0)
+(defvar disk_write_cur_1 0)
+(defvar disk_write_max_1 0)
+
+(defvar disk_read_cur_2 0)
+(defvar disk_read_max_2 0)
+(defvar disk_write_cur_2 0)
+(defvar disk_write_max_2 0)
+
+(defvar disk_read_cur_3 0)
+(defvar disk_read_max_3 0)
+(defvar disk_write_cur_3 0)
+(defvar disk_write_max_3 0)
+
+;; ===================================
+
+(defvar _enable_magic_vars true)
+
+;; Include the widget files
+(include "widgets/clock/clock.yuck")
+(include "widgets/cpu/cpu.yuck")
+(include "widgets/mem/mem.yuck")
+(include "widgets/net/net.yuck")
+(include "widgets/disk/disk.yuck")
+(include "widgets/volume/volume.yuck")
+
+
+;; Define the main window
+(defwindow sys-mon
+  :monitor 0
+  :geometry (geometry
+    :anchor "top right"
+    :x "5px"
+    :y "5px")
+  :stacking "fg"
+  :focusable false
+  :windowtype "dock"
+  :namespace "tom-eww-sys-mon"
+  :wm-ignore true
+  (box :orientation "v" :spacing 5 :space-evenly false :class "sys-mon-box"
+    (box :class "clock-box" (clock))
+    (box :class "cpu-box"  (cpu))
+    (box :class "mem-box"  (mem))
+    (box :class "net-box"  (net))
+
+    (disk :id "1"
+      :mount "/home"
+      :title "SSD M.2 4.0T"
+      :parts "(/,/home,/games)"
+
+      :read_cur disk_read_cur_1
+      :read_max disk_read_max_1
+      :write_cur disk_write_cur_1
+      :write_max disk_write_max_1
+    )
+
+    (disk :id "2"
+      :mount "/backups"
+      :title "Disk USB 4.0T"
+      :parts "(/backups)"
+
+      :read_cur disk_read_cur_2
+      :read_max disk_read_max_2
+      :write_cur disk_write_cur_2
+      :write_max disk_write_max_2
+    )
+
+    (disk :id "3"
+      :mount "/timeshift"
+      :title "SSD PCIe 1.6T"
+      :parts "(/timeshift)"
+
+      :read_cur disk_read_cur_3
+      :read_max disk_read_max_3
+      :write_cur disk_write_cur_3
+      :write_max disk_write_max_3
+    )
+
+    (box :class "volume-box" (volume))
+
+  )
+)

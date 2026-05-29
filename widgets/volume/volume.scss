@@ -1,0 +1,52 @@
+$volume-title-text: white;
+$volume-progress-bar: lime;
+$volume-mute-text: brown1;
+$volume-nomute-text: #888888;
+
+
+/* ===================================== */
+/* ========== VOLUME =================== */
+
+.volume-widget {
+   background-color: $widget-background-color;
+   border: $widget-border;
+   border-radius: 8px;
+}
+
+.volume-title-text {
+  color: $volume-title-text;
+  font-size: 14px;
+}  
+.volume-not-muted-text {
+  color: $volume-nomute-text;
+  font-size: 14px;
+}  
+.volume-muted-text {
+  color: $volume-mute-text;
+  font-size: 14px;
+}  
+.volume-perc-text {
+  color: $volume-progress-bar;
+  font-size: 14px;
+}
+
+.volume-bar {
+  margin-top: 5px;
+}
+.volume-bar progress {
+   background-color: $volume-progress-bar;
+   min-height: 8px;
+}
+.volume-bar trough {
+   background-color: $graph-background-color;
+   border: 1px solid #00FFAA;
+   min-height: 10px;
+   margin-bottom: 10px;
+}
+.volume-bar trough highlight {
+   background-color: #55ff55;
+}
+
+/* ===================================== */
+/* ===================================== */
+

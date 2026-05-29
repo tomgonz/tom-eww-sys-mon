@@ -1,0 +1,46 @@
+;; =============================================
+;; widgets/cpu.yuck
+;; =============================================
+
+(defpoll cpu-tooltip :interval "24h" "awk -F: '/^model name/{print $2; exit}' /proc/cpuinfo")
+
+(defwidget cpu []
+   (box :class "cpu-widget" :halign "center" :width widget_width
+      (box :orientation "v" :space-evenly false :halign "center" :width graph_width
+
+         (box :orientation "h" :space-evenly false
+            (label :class "cpu-clock-text" :halign "start" :text  "Clock: ${round(EWW_CPU.cores[0].freq / 1000, 2)}GHz")
+            (label :class "cpu-temp-text" :halign "end" :hexpand true :text {EWW_TEMPS[cpu_temp_sensor] != "null" ? "Temp: " + (floor(EWW_TEMPS[cpu_temp_sensor])) + "C" : ""})
+         )
+
+         (box :class "cpu-graph" :halign "center" :width graph_width :height graph_height_cpu_mem
+            (graph
+             :value {EWW_CPU.avg}
+             :time-range {graph_width + "s"}
+             :thickness 1.0
+             :line-style "round"
+             :tooltip cpu-tooltip)
+         )
+         (label :class "cpu-usage-text" :text "CPU Usage: ${round(EWW_CPU.avg, 1)}%"
+           :tooltip "Optimal cpu bar width: ${floor((graph_width - (arraylength(EWW_CPU.cores) + 1)) / arraylength(EWW_CPU.cores))}" )
+
+         ;; CPU vertical bars per core
+         (box :class "cpu-vbar-box" :height graph_height_cpu_mem
+            :orientation "h" 
+            :space-evenly true
+            :halign "center"
+            :width {cpu_bar_width}
+            :spacing 1
+            (for core in {EWW_CPU.cores}
+               (progress :class "cpu-vbar"
+                  :orientation "v"
+                  :value {core.usage}
+                  :width {cpu_bar_width}
+                  :flipped true
+               )
+            )
+         )
+
+      )
+   )
+)   

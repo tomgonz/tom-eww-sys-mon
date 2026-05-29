@@ -1,0 +1,23 @@
+;; =============================================
+;; widgets/volume.yuck
+;; =============================================
+
+(defpoll is_muted :interval "24h" "wpctl get-volume @DEFAULT_AUDIO_SINK@ | grep MUTED > /dev/null && echo 'MUTED' || echo 'MUTE'")
+(defpoll volume_value :interval "24h" :initial "0" "wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print int($2 * 100)}'")
+
+(defwidget volume []
+  (box :class "volume-widget" :halign "center" :width widget_width
+    (box :orientation "v" :space-evenly false :halign "center" :width graph_width
+
+      (box :orientation "h" :space-evenly true
+        (label :class "volume-title-text" :halign "start" :text "Volume")
+         (button :onclick "scripts/toggle_mute.sh"
+           (label :text {is_muted} :class {is_muted == 'MUTED' ? 'volume-muted-text' : 'volume-not-muted-text'})
+         )
+         (label :class "volume-perc-text" :halign "end" :text "${volume_value}%" )
+      )
+      (scale :class "volume-bar" :min 0 :max 100 :value {volume_value} :onchange "scripts/set_volume.sh {}%")
+
+    )
+  )
+)   

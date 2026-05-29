@@ -1,0 +1,34 @@
+/* ============================================= */
+/* eww.scss                                      */
+/* ============================================= */
+
+* {
+   all: unset;
+}
+
+$my_cpu_bar_width: 11px;
+
+$widget-border: 2px solid rgba(0, 0, 0, 0.5);
+$widget-background-color: rgba(50, 50, 50, 0.8);
+$graph-background-color: rgba(0, 0, 0, 0.4);
+$graph-border: 1px solid rgba(0, 0, 0, 0.5);
+
+@import "widgets/clock/clock.scss";
+@import "widgets/cpu/cpu.scss";
+@import "widgets/mem/mem.scss";
+@import "widgets/net/net.scss";
+@import "widgets/disk/disk.scss";
+@import "widgets/volume/volume.scss";
+
+
+tooltip.background {
+   background-color: rgb(0, 0, 0, 0.7);
+}
+tooltip label {
+   color: yellow;
+   font-size: 12px;
+   font-weight: bold;
+}
+
+.sys-mon-box {
+}

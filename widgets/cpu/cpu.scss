@@ -1,0 +1,57 @@
+
+$cpu-color: cyan;
+$cpu-bar-color: white;
+$cpu-temp-color: orange;
+$cpu-clock-color: white;
+
+/* ===================================== */
+/* ========== CPU ====================== */
+
+.cpu-widget {
+   background-color: $widget-background-color;
+   border: $widget-border;
+   border-radius: 8px;
+}
+.cpu-clock-text {
+   font-size: 12px;
+   color: $cpu-clock-color;
+}
+.cpu-temp-text {
+   font-size: 12px;
+   color: $cpu-temp-color;
+}
+
+/* ---- CPU GRAPH ---- */
+.cpu-graph {
+   margin-top: 2px;
+   color: $cpu-color;
+   border: $graph-border;
+   background-color: $graph-background-color;
+   graph {
+      background-color: $cpu-color;
+   }
+}
+.cpu-usage-text {
+   color: $cpu-color;
+   font-size: 14px;
+}
+/* ------------------- */
+
+/* ---- CPU VBARS ---- */
+.cpu-vbar-box {
+   margin-top: 3px;
+   margin-bottom: 5px;
+}
+.cpu-vbar trough {
+   background-color: $graph-background-color;
+   min-width:  $my_cpu_bar_width;
+   min-height: 20px;
+}
+.cpu-vbar progress {
+   background-color: $cpu-bar-color;
+   min-width:  $my_cpu_bar_width;
+}
+/* ------------------- */
+
+/* ===================================== */
+/* ===================================== */

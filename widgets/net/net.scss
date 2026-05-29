@@ -1,0 +1,60 @@
+
+$net-up-color: #00AAFF;
+$net-down-color: #FF3333;
+
+/* ===================================== */
+/* ========== NETWORK  ================= */
+
+.net-widget {
+   background-color: $widget-background-color;
+   border: $widget-border;
+   border-radius: 8px;
+}
+
+.net-title-text {
+   font-size: 14px;
+}
+.net-ip-text {
+   font-size: 10px;
+}
+
+/* ----- NET UP ------ */
+.net-up-graph {
+   margin-top: 2px;
+   color: $net-up-color;
+   background-color: $graph-background-color;
+   border: $graph-border;
+   graph {
+      background-color: $net-up-color;
+   }
+}
+.net-up-text {
+   color: $net-up-color;
+   margin-bottom: -3px;
+   font-size: 12px;
+}
+/* ------------------- */
+
+.net-separator-line {
+   background-color: rgb(255, 255, 255, 0.2);
+}
+
+/* ---- NET DOWN ----- */
+.net-down-graph {
+   margin-top: 0px;
+   color: $net-down-color;
+   background-color: $graph-background-color;
+   border: $graph-border;
+   graph {
+      background-color: $net-down-color;
+   }
+}
+.net-down-text {
+   color: $net-down-color;
+   margin-top: -3px;
+   font-size: 12px;
+}
+/* ------------------- */
+
+/* ===================================== */
+/* ===================================== */

@@ -1,0 +1,54 @@
+;; =============================================
+;; widgets/net.yuck
+;; =============================================
+
+(defvar net_down_cur 0)
+(defvar net_down_max 0)
+(defvar net_up_cur 0)
+(defvar net_up_max 0)
+
+(defpoll local_ip :interval "24h" "scripts/get_ip.sh")
+
+
+(defwidget net []
+   (box :class "net-widget" :halign "center" :width widget_width
+      (box :orientation "v" :space-evenly false :halign "center" :width graph_width
+
+         ;; Hidden label to keep EWW_NET active
+         (label :visible false :limit-width 1 :text "${EWW_NET}")
+
+         (box :orientation "h" :space-evenly false
+            (label :class "net-title-text" :halign "start" :text "Network ${net_dev}")
+            (label :class "net-ip-text" :halign "end" :hexpand true :text "(${local_ip})")
+         )
+         (box :orientation "h" :space-evenly false
+            (label :class "net-up-text" :halign "start" :text  "Up: ${formatbytes(net_up_cur,true,"iec")}/s")
+            (label :class "net-up-text" :halign "end" :hexpand true :text  "(Max: ${formatbytes(net_up_max,true,"iec")})")
+         )
+         (box :class "net-up-graph" :halign "center" :width graph_width :height graph_height
+           (graph
+            :value net_up_cur
+            :time-range {graph_width + "s"}
+            :thickness 1.0
+            :line-style "round")
+         )
+
+         (box :halign "center" :width graph_width :height "2" :class "net-separator-line")
+    
+         (box :class "net-down-graph" :halign "center" :width graph_width :height graph_height
+            (transform :scale-y "-100%" :translate-y {graph_height -2 + "px"}
+               (graph
+                :value net_down_cur
+                :time-range {graph_width + "s"}
+                :vertical false
+                :thickness 1.0
+                :line-style "round")
+            )
+         )
+         (box :orientation "h" :space-evenly false
+            (label :class "net-down-text" :halign "start" :text  "Down: ${formatbytes(net_down_cur,true,"iec")}/s")
+            (label :class "net-down-text" :halign "end" :hexpand true :text  "(Max: ${formatbytes(net_down_max,true,"iec")})")
+         )
+      )
+   )
+)   

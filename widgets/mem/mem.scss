@@ -1,0 +1,60 @@
+
+$mem-color: #00FF00; 
+$mem-text-title-color: white;
+$swap-color: #FF3333;
+   
+/* ===================================== */
+/* ========== MEMORY =================== */
+
+.mem-widget {
+   color: $mem-color;
+   border: $widget-border;
+   background-color: $widget-background-color;
+   border-radius: 8px;
+}
+
+.mem-title-text {
+   color: $mem-text-title-color;
+   font-size: 14px;
+}
+
+/* ---- MEM GRAPH ---- */
+.mem-graph {
+   margin-top: 5px;
+   color: $mem-color;
+   background-color: $graph-background-color;
+   border: $graph-border;
+   graph {
+      background-color: $mem-color;
+   }
+}
+.mem-text {
+   color: $mem-color;
+   margin-top: -2px;
+   margin-bottom: 3px;
+   font-size: 12px;
+}
+/* ------------------- */
+
+/* ---- SWAP BAR ----- */
+.swap-bar {
+   min-width: 1px;
+}
+.swap-bar progress {
+   background-color: $swap-color;
+}
+.swap-bar trough {
+   background-color: $graph-background-color;
+   border: 1px solid;
+   border-color: $swap-color;
+}
+.swap-text {
+   color: $swap-color;
+   margin-top: -2px;
+   margin-bottom: 1px;
+   font-size: 12px;
+}
+/* ------------------- */
+
+/* ===================================== */
+/* ===================================== */

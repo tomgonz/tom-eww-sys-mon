@@ -1,0 +1,48 @@
+;; -------------------------------------------------------------
+;; widgets/disk.yuck – reusable disk monitor widget
+;; -------------------------------------------------------------
+
+(defwidget disk [id mount title parts read_cur read_max write_cur write_max]
+  (box :class "disk-widget" :halign "center" :width widget_width
+    (box :orientation "v" :space-evenly false :halign "center" :width graph_width
+
+      ;; ---- TITLE ------------------------------------------------------
+      (box :orientation "h" :space-evenly false
+        (label :class "disk-title-text" :halign "start" :text title)
+        (button :onclick "${filemgr} ${mount} &" :halign "end" :hexpand true 
+          (label :class "disk-location-text" :text parts)
+        )
+      )
+
+      ;; ---- READ METRIC -------------------------------------------------
+      (box :orientation "h" :space-evenly false
+        (label :class "disk-read-text" :halign "start" :text  "Read: ${formatbytes(read_cur,true,"iec")}/s")
+        (label :class "disk-read-text" :halign "end" :text  "(Max: ${formatbytes(read_max,true,"iec")}/s)" :hexpand true)
+      )
+
+      ;; ---- READ GRAPH --------------------------------------------------
+      (box :class "disk-read-graph" :halign "center" :width graph_width :height graph_height
+        (graph :value read_cur :thickness 1 :time-range {graph_width + "s"})
+      )
+
+      ;; ---- USAGE BAR (uses magic variable) ----------------------------
+      (progress :class "disk-usage-bar" :width graph_width :value {EWW_DISK[mount].used_perc}
+        :tooltip "${floor(EWW_DISK[mount].used_perc)}%")
+
+      ;; ---- WRITE GRAPH -------------------------------------------------
+      (box :class "disk-write-graph" :halign "center" :width graph_width :height graph_height
+        (transform :scale-y "-100%" :translate-y {graph_height -3 + "px"}
+          (graph :value write_cur :thickness 1 :time-range {graph_width + "s"})
+        )
+      )
+
+      ;; ---- WRITE METRIC ------------------------------------------------
+      (box :orientation "h" :space-evenly false
+        (label :class "disk-write-text" :halign "start" :text  "Write: ${formatbytes(write_cur,true,"iec")}/s")
+        (label :class "disk-write-text" :halign "end" :text  "(Max: ${formatbytes(write_max,true,"iec")}/s)" :hexpand true)
+      )
+
+    )
+  )
+)
+

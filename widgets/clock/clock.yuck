@@ -1,0 +1,36 @@
+;; =============================================
+;; widgets/clock.yuck
+;; =============================================
+
+(defpoll uptime-seconds :interval "5s" "/usr/bin/cut -d' ' -f1 /proc/uptime")
+
+(defwidget clock []
+   (box :class "clock-widget" :halign "center" :width widget_width
+      (box :orientation "v" :space-evenly false :halign "center" :width graph_width
+
+         (label :class "clock-time-text" :halign "center" :text {formattime(EWW_TIME, "%I:%M %p", timezone)} :tooltip timezone)
+
+         (progress :class "seconds-bar"
+            :height 1
+            :halign "center"
+            :width clock_bar_width
+            :value {(formattime(EWW_TIME, "%S", timezone) * 100) / 59}
+         )
+
+         (box :halign "center" :width {graph_width - 20}
+           (button :onclick "${filemgr} https://timeanddate.com/calendar/monthly.html &"
+             (box :orientation "h" :space-evenly false 
+               (label :class "clock-day-text" :halign "start" :text {formattime(EWW_TIME, "%a", timezone)})
+               (label :class "clock-date-text" :halign "end" :hexpand true :text {formattime(EWW_TIME, "%v", timezone)})
+             )
+           )   
+         )
+
+         (box :halign "center" :width {clock_bar_width - 20} :height "1" :class "separator-line")
+
+         (label :class "clock-uptime-text" :text "Uptime: ${floor((uptime-seconds ?: 1) / 86400)}d ${floor((uptime-seconds ?: 1) % 86400 / 3600)}h ${floor((uptime-seconds ?: 1) % 3600 / 60)}m")
+
+      )
+   )
+)   
+
