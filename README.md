@@ -57,7 +57,7 @@ Clean, modular, and well-documented system monitoring widgets for **EWW** (Elkow
    sudo apt install lua pipewire wireplumber   # Ubuntu/Debian
    ```
 
-3. Clone or download this repo into `~/.config/eww/`
+3. Clone or download this repo into `~/.config/eww/` like the file structure below.
    ```bash
    git clone https://github.com/tomgonz/tom-eww-sys-mon
    ```
