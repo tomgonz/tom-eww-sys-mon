@@ -62,7 +62,7 @@ Clean, modular, and well-documented system monitoring widgets for **EWW** (Elkow
    git clone https://github.com/tomgonz/tom-eww-sys-mon
    ```
 
-4. Start the widgets:
+4. Start or restart the widgets.  Add this to your login autostart.
    ```bash
    ~/.config/eww/launch_eww.sh
    ```
