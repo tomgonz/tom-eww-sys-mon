@@ -18,7 +18,7 @@ A focused, lightweight system monitor bar built with EWW.
 - Current clock speed
 - CPU Temperature (configurable sensor)
 - Usage history graph (hover for CPU model)
-- CPU Usage text (hover to see Optimal CPU vertical bar width)
+- CPU Usage text (hover for Optimal CPU vertical bar width)
 - Per-core vertical usage bars
 
 ### Memory & Swap
