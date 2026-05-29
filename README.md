@@ -58,6 +58,9 @@ Clean, modular, and well-documented system monitoring widgets for **EWW** (Elkow
    ```
 
 3. Clone or download this repo into `~/.config/eww/`
+   ```bash
+   git clone https://github.com/tomgonz/tom-eww-sys-mon
+   ```
 
 4. Start the widgets:
    ```bash
