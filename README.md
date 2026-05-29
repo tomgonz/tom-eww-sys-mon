@@ -73,8 +73,9 @@ Clean, modular, and well-documented system monitoring widgets for **EWW** (Elkow
 eww daemon           # Start EWW daemon
 eww open sys-mon     # Open the system monitor
 eww kill             # Close everything
-eww reload           # Reload config (shows errors)
 eww state            # Show all current variables
+eww reload           # Reload config (shows errors)
+eww logs             # show logs from startup
 ```
 
 ---
