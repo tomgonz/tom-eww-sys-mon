@@ -22,8 +22,8 @@ Clean, modular, and well-documented system monitoring widgets for **EWW** (Elkow
 
 ### Memory & Swap
 - Total memory and swap sizes
-- Memory usage graph
-- Swap usage bar
+- Memory usage graph (hover to see percent used)
+- Swap usage bar (hover to see percent used)
 
 ### Network
 - Network device name + current IP
@@ -32,7 +32,7 @@ Clean, modular, and well-documented system monitoring widgets for **EWW** (Elkow
 ### Disks (Multi-disk support)
 - Drive title and mount point (click to open in file manager)
 - Read/Write speed graphs with automatic max scaling
-- Usage percentage bar
+- Usage percentage bar (hover to see percent)
 
 ### Volume
 - Mute toggle button
