@@ -17,8 +17,8 @@ Clean, modular, and well-documented system monitoring widgets for **EWW** (Elkow
 - Current clock speed
 - CPU Temperature (configurable sensor)
 - Usage history graph (hover for CPU model)
+- CPU Usage text (hover to see Optimal cpu vbar width)
 - Per-core vertical usage bars
-- Optimal bar width tooltip
 
 ### Memory & Swap
 - Total memory and swap sizes
