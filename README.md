@@ -3,6 +3,7 @@
 Clean, modular, and well-documented system monitoring widgets for **EWW** (Elkowar's Wacky Widgets).
 
 ![Screenshot](screenshot.png) <!-- Add a nice screenshot here -->
+A focused, lightweight system monitor bar built with EWW.
 
 ## Features
 
