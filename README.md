@@ -1,4 +1,3 @@
-# eww-sys-mon
 # Tom's EWW System Monitor
 
 Clean, modular, and well-documented system monitoring widgets for **EWW** (Elkowar's Wacky Widgets).
