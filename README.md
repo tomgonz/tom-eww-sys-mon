@@ -16,7 +16,7 @@ Clean, modular, and well-documented system monitoring widgets for **EWW** (Elkow
 - Current clock speed
 - CPU Temperature (configurable sensor)
 - Usage history graph (hover for CPU model)
-- CPU Usage text (hover to see Optimal cpu vbar width)
+- CPU Usage text (hover to see Optimal CPU vertical bar width)
 - Per-core vertical usage bars
 
 ### Memory & Swap
@@ -31,7 +31,7 @@ Clean, modular, and well-documented system monitoring widgets for **EWW** (Elkow
 ### Disks (Multi-disk support)
 - Drive title and mount point (click to open in file manager)
 - Read/Write speed graphs with automatic max scaling
-- Usage percentage bar (hover to see percent)
+- Usage percentage bar (hover to see percent used)
 
 ### Volume
 - Mute toggle button
