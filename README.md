@@ -152,6 +152,6 @@ Most important settings are near the top of `eww.yuck`.
 
 ## License
 
-Feel free to use, modify, and share. Would love to see your improvements or screenshots!
+GPL v3.0
 
 ---
