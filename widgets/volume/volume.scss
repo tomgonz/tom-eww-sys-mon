@@ -20,10 +20,12 @@ $volume-nomute-text: #888888;
 .volume-not-muted-text {
   color: $volume-nomute-text;
   font-size: 14px;
+  font-weight: bold;
 }  
 .volume-muted-text {
   color: $volume-mute-text;
   font-size: 14px;
+  font-weight: bold;
 }  
 .volume-perc-text {
   color: $volume-progress-bar;
