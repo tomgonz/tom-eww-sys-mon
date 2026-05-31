@@ -1,0 +1,31 @@
+;; =============================================
+;; widgets/clock.yuck
+;; =============================================
+
+(defvar timezone2 "UTC")
+
+(defwidget clock-utc []
+   (box :class "clock-widget" :halign "center" :width widget_width
+      (box :orientation "v" :space-evenly false :halign "center" :width graph_width
+
+         (label :class "clock-time-text" :halign "center" :text {formattime(EWW_TIME, "%H:%M:%S ", timezone2)} :tooltip timezone2)
+
+         (progress :class "seconds-bar"
+            :height 1
+            :halign "center"
+            :width clock_bar_width
+            :value {(formattime(EWW_TIME, "%S", timezone2) * 100) / 59}
+         )
+
+         (box :halign "center" :width {graph_width - 20}
+           (button :onclick "${filemgr} https://timeanddate.com/calendar/monthly.html &"
+             (box :orientation "h" :space-evenly false 
+               (label :class "clock-day-text" :halign "start" :text {formattime(EWW_TIME, "%a", timezone2)})
+               (label :class "clock-date-text" :halign "end" :hexpand true :text {formattime(EWW_TIME, "%v", timezone2)})
+             )
+           )   
+         )
+
+      )
+   )
+)
