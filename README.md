@@ -13,6 +13,7 @@ A focused, lightweight system monitor bar built with EWW...
 - Live seconds progress bar
 - Date (click to open monthly calendar in browser)
 - System uptime
+- A UTC clock is provided, uncomment in eww.yuck to see
 
 ### CPU
 - Current clock speed
