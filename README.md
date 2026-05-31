@@ -118,7 +118,8 @@ Most important settings are near the top of `eww.yuck`.
 └── widgets/
     ├── clock/
     |   ├── clock.scss
-    |   └── clock.yuck
+    |   ├── clock.yuck
+    |   └── clock-utc.yuck
     ├── cpu/
     |   ├── cpu.scss
     |   └── cpu.yuck
